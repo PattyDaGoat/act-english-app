@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ACT English Study</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#eef6ff',100:'#d9eaff',500:'#2563eb',600:'#1d4ed8',700:'#1e40af' },
+          },
+          fontFamily: { sans: ['system-ui','-apple-system','Segoe UI','Roboto','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+  <div id="app"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

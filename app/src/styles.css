@@ -1,0 +1,52 @@
+/* Custom styles layered on top of Tailwind Play CDN */
+:root { --focus: #2563eb; }
+
+*:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.passage p { margin-bottom: 0.75rem; line-height: 1.7; }
+.passage .underline-target {
+  text-decoration: underline;
+  text-decoration-color: #2563eb;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  cursor: help;
+}
+
+.heatmap-cell { transition: transform 0.15s ease; }
+.heatmap-cell:hover { transform: scale(1.05); }
+
+/* Mock test chrome — minimal */
+.mock-shell { background: #fafaf9; }
+.mock-shell .mock-timer { font-variant-numeric: tabular-nums; }
+
+/* Celebrate-correct: brief pulse + confetti-like color sweep on the panel */
+@keyframes celebratePulse {
+  0%   { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(16,185,129,0.0); }
+  40%  { transform: scale(1.01); box-shadow: 0 0 0 14px rgba(16,185,129,0.18); }
+  100% { transform: scale(1.00); box-shadow: 0 0 0 0 rgba(16,185,129,0.0); }
+}
+.celebrate-correct { animation: celebratePulse 0.55s ease-out 1; }
+
+/* Choice button satisfying-press feedback */
+button.choice-pressed { transform: scale(0.98); transition: transform 0.08s ease; }
+
+/* Mini-lesson interactive "tap the error" hover */
+.tap-error-word { cursor: pointer; padding: 0 2px; border-radius: 3px; transition: background 0.15s; }
+.tap-error-word:hover { background: #fef3c7; }
+.tap-error-word.correct { background: #d1fae5; color: #065f46; font-weight: 600; }
+.tap-error-word.wrong   { background: #fee2e2; color: #991b1b; text-decoration: line-through; }
+
+/* Print/export later */
+@media print { .no-print { display: none; } }
